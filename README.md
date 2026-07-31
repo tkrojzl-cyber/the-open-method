@@ -60,7 +60,7 @@ The Open Method produces reproducible architecture. The same prompt sequence to 
 
 Vibe-coding has no verification layer. The output is accepted as generated. If the AI produces a bug, the bug ships. If the AI produces a security vulnerability, the vulnerability ships. There is no check between generation and deployment.
 
-The Open Method includes verification at every layer. The prompt framework includes explicit verification steps. The CEC framework checks every decision against doctrine. The hash-chained audit trail provides tamper-evident evidence of every action. The W3C Verifiable Credentials output conforms to an international standard. The system passes 10 security audit checks per build (input validation, CORS, RLS, rate limiting, secret exposure, em dash compliance, currency consistency, dead links, mobile rendering, CTA integrity). Vibe-coding cannot produce this because verification is a structural layer, not a prompt you can ask for.
+The Open Method includes verification at every layer. The prompt framework includes explicit verification steps. The CEC framework checks every decision against doctrine. The hash-chained audit trail provides tamper-evident evidence of every action. The system passes 10 audit checks per build (input validation, CORS, RLS, rate limiting, secret exposure, em dash compliance, currency consistency, dead links, mobile rendering, CTA integrity). Vibe-coding cannot produce this because verification is a structural layer, not a prompt you can ask for.
 
 ### 3. Error Correction
 
@@ -84,7 +84,7 @@ The Open Method is a defined methodology. 7 Czech utility models have been filed
 
 Vibe-coding produces products that cannot survive platform failure. If the cloud platform goes down, the product goes down. If the account is locked, the product is gone. There is no recovery path.
 
-The Open Method includes a Doomsday Recovery Document for every build. Full source code, entity schemas, API specifications, and an 8-step rebuild sequence. If the platform disappears tomorrow, the product can be rebuilt on different infrastructure, with a different LLM, in 5 days. Vibe-coding has no sovereignty layer because sovereignty is an architecture, not a prompt.
+The Open Method includes a Doomsday Recovery Document as a standard deliverable: full source code, entity schemas, API specifications, and a step-by-step rebuild sequence. If the platform disappears tomorrow, the product can be rebuilt on different infrastructure, with a different LLM, in days, not months. Vibe-coding has no sovereignty layer because sovereignty is an architecture, not a prompt.
 
 ---
 
@@ -121,7 +121,7 @@ The Open Method includes a Doomsday Recovery Document for every build. Full sour
 
 **Phase 9, Knowledge and Continuity (Prompts 40-44):** Business continuity, knowledge transfer, content distribution, load testing, secret audit. Survives: founder being unavailable, knowledge traps, content loss, scale collapse, credential leaks.
 
-**Phase 10, Final Sovereignty Gate (Prompts 45-47):** WCAG 2.2 AA accessibility audit, CEC final drift audit, 22-criterion ship decision matrix. Survives: accessibility gaps, final drift, all failure modes combined.
+**Phase 10, Final Sovereignty Gate (Prompts 45-47):** WCAG 2.2 AA accessibility audit, CEC final drift audit, ship decision matrix. Survives: accessibility gaps, final drift, all failure modes combined.
 
 Full prompt text for all 47 prompts is in the expanded documentation. This README describes the architecture. The prompts are the implementation.
 
