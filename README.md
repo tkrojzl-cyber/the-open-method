@@ -244,7 +244,7 @@ ISO 27001 started as one document. One organization. One audit. One certificate.
 
 SSL started as one implementation. One browser. One certificate authority. Then adoption. Then global infrastructure. The standard defines the protocol. The implementation runs it. The certificate authority issues the trust. Three components. One system. Now securing every HTTPS connection on the internet.
 
-The Open Method follows the same architecture. The method is the standard. The implementation is the product. The seal is the certificate. The deployment network is the certificate authority network. The law creates the need. The standard fills the need. The deployment network scales it.
+The Open Method follows the same architecture. The independent operator assessment is the standard. The product is the implementation. The seal is the certificate. The deployment network is the certificate authority network. The law creates the need. The standard fills the need. The deployment network scales it.
 
 This is not a product. This is how infrastructure standards are born.
 
@@ -285,29 +285,29 @@ The method is published for free because the method is stronger when other peopl
 
 **This is how infrastructure deploys:**
 
-ISO 27001 does not deploy through one auditor. It deploys through a network of certified auditors. SSL does not deploy through one certificate authority. It deploys through a network of certificate authorities. The bounty board is the deployment network. The method is the standard. The plugins are the implementations. The revenue share is the installer fee.
+ISO 27001 does not deploy through one auditor. It deploys through a network of certified auditors. SSL does not deploy through one certificate authority. It deploys through a network of certificate authorities. The bounty board is the deployment network. The independent operator assessment is the standard. The plugins are the implementations. The revenue share is the installer fee.
 
 **The principle:** Open the HOW. Sell the WHAT. Share the WHAT when it sells.
 
-| # | Bounty | Layer | Revenue Share |
-|---|---|---|---|
-| 1 | Signal Detector: LinkedIn Scraper | L2 | 5% of client revenue from this plugin |
-| 2 | Signal Detector: Reddit Sentiment | L2 | 5% of client revenue from this plugin |
-| 3 | Signal Detector: GitHub Referrer | L2 | 5% of client revenue from this plugin |
-| 4 | Signal Detector: Hacker News Score | L2 | 5% of client revenue from this plugin |
-| 5 | Signal Detector: Search Intent | L2 | 5% of client revenue from this plugin |
-| 6 | PresenceOS: Voice Logger | L3 | 10% of client revenue from this plugin |
-| 7 | PresenceOS: LoRa Sync | L3 | 10% of client revenue from this plugin |
-| 8 | PresenceOS: Cognitive Twin | L3 | 10% of client revenue from this plugin |
-| 9 | Judgment Template: Finance | L4 | 5% of client revenue from this template |
-| 10 | Judgment Template: Healthcare | L4 | 5% of client revenue from this template |
-| 11 | Judgment Template: Legal | L4 | 5% of client revenue from this template |
-| 12 | Judgment Template: Education | L4 | 5% of client revenue from this template |
-| 13 | Plugin: CEC Dashboard | L6 | 10% of client revenue from this plugin |
-| 14 | Plugin: Session Replay | L1 | 5% of client revenue from this plugin |
-| 15 | Plugin: Multi-Agent Bridge | L5 | 10% of client revenue from this plugin |
+| # | Bounty | Revenue Share |
+|---|---|---|
+| 1 | Signal Detector: LinkedIn Scraper | 5% of client revenue from this plugin |
+| 2 | Signal Detector: Reddit Sentiment | 5% of client revenue from this plugin |
+| 3 | Signal Detector: GitHub Referrer | 5% of client revenue from this plugin |
+| 4 | Signal Detector: Hacker News Score | 5% of client revenue from this plugin |
+| 5 | Signal Detector: Search Intent | 5% of client revenue from this plugin |
+| 6 | PresenceOS: Voice Logger | 10% of client revenue from this plugin |
+| 7 | PresenceOS: LoRa Sync | 10% of client revenue from this plugin |
+| 8 | PresenceOS: Cognitive Twin | 10% of client revenue from this plugin |
+| 9 | Judgment Template: Finance | 5% of client revenue from this template |
+| 10 | Judgment Template: Healthcare | 5% of client revenue from this template |
+| 11 | Judgment Template: Legal | 5% of client revenue from this template |
+| 12 | Judgment Template: Education | 5% of client revenue from this template |
+| 13 | Plugin: CEC Dashboard | 10% of client revenue from this plugin |
+| 14 | Plugin: Session Replay | 5% of client revenue from this plugin |
+| 15 | Plugin: Multi-Agent Bridge | 10% of client revenue from this plugin |
 
-**To claim:** Fork, build, submit PR with tests and docs. All contributions must be MIT licensed, include documentation, include tests, and be compatible with the 6-layer architecture. No proprietary dependencies.
+**To claim:** Fork, build, submit PR with tests and docs. All contributions must be MIT licensed, include documentation, include tests, and be compatible with the documented architecture. No proprietary dependencies.
 
 **The fine print, stated plainly:** Revenue share is calculated from gross revenue received by Brainiac Ltd for the specific plugin or template the contributor built. Share is paid quarterly. Minimum payout threshold is â‚¬100. If the plugin generates no client revenue, no payment is owed. This is a revenue share, not a salary, not a guarantee, and not a debt. It is a deal between builders who believe the method works and want to prove it together.
 
