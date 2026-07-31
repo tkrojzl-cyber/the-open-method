@@ -4,7 +4,7 @@
 
 Not vibe-coding, or prompt-and-pray, or a chatbot wrapper.
 
-A structured systems architecture expressed in natural language, with verification, error correction, and cryptographic integrity built in. Derived from a systematic building practice over nine months, solo, for about 2 100 EUR.
+A structured systems architecture expressed in natural language, with verification, error correction, and cryptographic integrity built in. Derived from a systematic building practice over nine months, solo, for about â‚¬2,100.
 
 This method was not a recipe that produced those products. It is the pattern extracted from them. The products came first. The method came after. The method is what the practice taught.
 
@@ -176,26 +176,37 @@ The architecture pattern for running an AI agent as a personal operating system.
 
 ## CEC, Cognitive Error Correction
 
-A formal framework for preventing cognitive augmentation from becoming self-defeating.
+A working software layer that detects drift from the north star. Not a theoretical framework. A system that runs.
 
-**The thesis:** Augmentation increases velocity. Velocity increases load. Load increases error rate. Without correction, augmentation is self-defeating above a critical threshold. CEC prevents this.
+**The thesis:** Augmentation increases velocity. Velocity increases load. Load increases error rate. Without correction, augmentation is self-defeating above a critical threshold. CEC prevents this by catching drift before it compounds.
 
-**The 6-layer cognitive loop:**
+**What CEC actually does (three components, all running):**
 
-L1 Memory feeds L2 Perception feeds L3 Presence feeds L4 Judgment feeds L5 Execution feeds L6 Integrity feeds back to L1.
+**1. Decision Logging (ThinkingLog).** Every significant decision is recorded as a structured entry: Problem, Angle, Decision, Open Question, Outcome. This is not a diary. It is an auditable decision trail. Each entry is tagged, dated, and linked to the product and lead it relates to. The ThinkingLog is the input. Without logged decisions, there is nothing to check.
 
-| Layer | Name | Function |
-|---|---|---|
-| L1 | Memory | Session logs, decision records, entity data. Persistent state. |
-| L2 | Perception | Detects and classifies signals from the environment. Signal intelligence. |
-| L3 | Presence | Operator current state and context. Contextputer operates here. |
-| L4 | Judgment | Evaluates options against doctrine and north star. Decision layer. |
-| L5 | Execution | Acts on decisions. Backend functions, automations, external calls. |
-| L6 | Integrity | Verifies outputs. Hash chains, verification APIs, audit trails. |
+**2. Contradiction Engine.** Scans the ThinkingLog for contradictions. Compares current decisions against prior decisions. If Entry A (older) contradicts Entry B (newer), Entry A gets flagged. Temporal weighting: the newer decision wins, the older entry gets the flag. This stops the system from flagging decisions you already resolved. A 60-day recency window prevents the engine from flagging intentional pivots as contradictions. Decisions more than 60 days apart are probably deliberate changes of direction, not drift.
+
+The contradiction engine also checks decisions against the north star. If the current direction contradicts the stated objective, the contradiction is flagged. Not deleted. The full chain is the record. The system is antifragile: every flagged contradiction improves the doctrine.
+
+**3. Coherence Audit.** A weekly cross-reference of the entire system. Checks whether outreach verticals, content calendar, LinkedIn posts, VOID signal scans, and ThinkingLog focus are all pointing in the same direction. Scores coherence 0-10. If the score drops below 7, drift is flagged. This catches the failure mode where each part of the system is working but they are working against each other.
+
+**How CEC runs:**
+
+CEC runs after every build phase. The output is stored on the BuildSession record: cec_last_run, cec_drift_severity, cec_contradiction_flag, cec_output_summary. The drift severity tells you how far off course you are. The contradiction flag tells you which decisions conflict. The summary tells you what to fix.
+
+This is not a dashboard you look at. It is a layer that runs. It flags problems before they compound. It does not fix them. The operator fixes them. CEC identifies. The human decides.
+
+**Why this is not vibe-coding:**
+
+Vibe-coding has no error correction. Errors accumulate. The faster you build, the more errors you accumulate. At some point, the error correction cost exceeds the velocity gain. The system degrades. CEC prevents this because it runs continuously, not after the fact. It is the difference between a smoke alarm and a fire investigation. One catches the fire while it is small. The other figures out why it burned.
+
+**What CEC is not:**
+
+CEC is not a cognitive model. It is not a theory of mind. It is not a 6-layer architecture diagram. It is a working system: log decisions, check for contradictions, audit coherence, flag drift. The same three steps every time. The value is in running it, not in diagramming it.
 
 **The Contextputer Protocol:**
 
-A cryptographic packet format for logging operator state with tamper-evident integrity.
+A cryptographic packet format for logging operator state with tamper-evident integrity. This is the hardware layer of CEC. The software layer (ThinkingLog, contradiction engine, coherence audit) runs on the agent. The hardware layer (Contextputer) runs on the CardPuter. Both produce evidence. Both are tamper-evident. One is cloud. One is silicon.
 
 ```json
 {
@@ -206,11 +217,6 @@ A cryptographic packet format for logging operator state with tamper-evident int
   "decisions": ["Decision 1", "Decision 2"],
   "open_threads": ["Thread 1", "Thread 2"],
   "next_actions": ["Action 1", "Action 2"],
-  "operator_state": {
-    "energy": "high",
-    "focus": "deep_work",
-    "mode": "build"
-  },
   "previous_hash": "sha256-of-previous-packet",
   "this_hash": "sha256-of-this-packet-excluding-this_hash-field"
 }
@@ -219,7 +225,7 @@ A cryptographic packet format for logging operator state with tamper-evident int
 **Critical rules:**
 - summary is redacted before hashing. No sensitive data in the chain.
 - previous_hash links to the previous packet. SHA-256. Break the chain, every downstream packet fails verification instantly.
-- Same standard as blockchain evidence systems. Not a blockchain (no distributed consensus). Local, tamper-evident.
+- Not a blockchain (no distributed consensus). Local, tamper-evident.
 
 **Three-tier build sequence:**
 
@@ -230,7 +236,6 @@ A cryptographic packet format for logging operator state with tamper-evident int
 | Tier 3 | Full firmware daemon. Continuous logging, real-time hash chain. | Same + PresenceOS firmware |
 
 Note: Contextputer is the protocol. The M5Cardputer is the hardware that runs it.
-
 ---
 
 ## How Infrastructure Standards Are Born
