@@ -4,9 +4,9 @@
 
 AI agents can build software. The problem is not building. The problem is verifying what was built, correcting what drifts, and proving it still works when the platform, the vendor, or the founder is gone.
 
-Not vibe-coding, or prompt-and-pray, or a chatbot wrapper.
+Not vibe-coding. Not prompt-and-pray. Not a chatbot wrapper.
 
-A structured systems architecture expressed in natural language, with verification, error correction, and cryptographic integrity built in. Derived from a systematic building practice over nine months, solo, for about â‚¬2,100.
+A structured systems architecture expressed in natural language, with verification, error correction, and cryptographic integrity built in. Derived from a systematic building practice over nine months, solo, with a total production cost of about EUR2,100.
 
 This method was not a recipe that produced those products. It is the pattern extracted from them. The products came first. The method came after. The method is what the practice taught.
 
@@ -18,7 +18,7 @@ Every claim below is verifiable. Verification steps are in the last section. Che
 
 Production-grade AI products were built over nine months using an AI agent as an operating system. No formal methodology was followed. Iteration. Experimentation. Things broke. Things got fixed. What worked and what did not got logged.
 
-After extensive building, the pattern was visible. The same architectural decisions kept appearing. The same verification steps kept being necessary. The same failure modes kept recurring. The method is the distillation of nine months of iterative practice, not a theoretical framework imposed before the work began.
+After enough building, the pattern was visible. The same architectural decisions kept appearing. The same verification steps kept being necessary. The same failure modes kept recurring. The method is what nine months of practice taught. Not a theory imposed before the work.
 
 The 10-prompt build core approximates what was actually done: scaffold, build features, visualize, integrate, polish. The 37 sovereignty prompts are what was learned should be done but was not always done: disaster recovery, hash chains, legal shields, knowledge transfer, accessibility. The method is the complete picture. The practice was the incomplete version of it.
 
@@ -36,7 +36,7 @@ The method has three layers, each extracted from a different phase of practice.
 
 **Stage 3 (47 prompts, added sovereignty):** Doomsday recovery, hash chains, public verification, legal shields, operational resilience, knowledge transfer, accessibility. These are the practices that were learned to be necessary but were not implemented on every build. Some products have them. Some do not. The method says: all should. The practice says: still catching up.
 
-**The current version is 47 prompts across 11 phases, plus Phase 0 (DACV).** The 10-prompt build core is what was done. The 37 additional prompts are what was learned to do. Phase 0 runs before all of them. The complete method is all three.
+**The current version is 47 prompts across 11 phases. Phase 0 (DACV) runs before Phase 1 but is not counted in the 47. It is a verification protocol, not a build prompt.** The 10-prompt build core is what was done. The 37 additional prompts are what were learned to do. Phase 0 runs before all of them. The complete method is all three.
 
 10 prompts build the product. 37 more make it sovereign. The first 10 are derived from practice. The remaining 37 are validated by the absence of the failures they prevent on the products where they were implemented, and by the presence of those failures on the products where they were not.
 
@@ -49,7 +49,7 @@ Before any build begins, a verification protocol runs. Two AIs with different ar
 
 The human orchestrates. The AIs are the advisory board. The human makes the call.
 
-This was not designed. It was discovered on July 29, 2026, while setting up the hardware for the keynote. One AI was asked for the optimal encoder configuration. It specified an NVIDIA RTX 3080. The flat does not contain an RTX 3080. The AI hallucinated hardware that does not exist. The second AI caught it. Fifteen minutes to a locked configuration that would have taken hours of trial and error solo.
+This was not designed. It was discovered during routine setup. One AI was asked for the optimal encoder configuration. It specified an NVIDIA RTX 3080. The flat does not contain an RTX 3080. The AI hallucinated hardware that does not exist. The second AI caught it. Fifteen minutes to a locked configuration that would have taken hours of trial and error solo.
 
 Four question types structure the handoff:
 - A (Verify): Is this claim accurate?
@@ -142,7 +142,7 @@ The Open Method includes a Doomsday Recovery Document as a standard deliverable:
 
 **Phase 10, Final Sovereignty Gate (Prompts 45-47):** WCAG 2.2 AA accessibility audit, CEC final drift audit, ship decision matrix. Survives: accessibility gaps, final drift, all failure modes combined.
 
-Full prompt text for all 47 prompts is in the expanded documentation. This README describes the architecture. The prompts are the implementation.
+Full prompt text for all 47 prompts is published as GitHub Issues in this repository. Each issue is one prompt, labeled by phase and number. This README describes the architecture. The issues are the implementation.
 
 ---
 
@@ -194,6 +194,8 @@ The architecture pattern for running an AI agent as a personal operating system.
 ---
 
 ## CEC, Cognitive Error Correction
+
+AI augmentation increases velocity. Velocity increases error rate. Without correction, the system degrades faster than it builds. CEC is the layer that catches this.
 
 A working software layer that detects drift from the north star. Not a theoretical framework. A system that runs.
 
@@ -272,7 +274,7 @@ This is not a product. This is how infrastructure standards are born.
 
 ## The Dead Drop Principle
 
-In intelligence work, a dead drop is an evidence channel that survives the failure of every other channel. The information is placed in a domain independent of the operative. If the operative is compromised, the dead drop remains. The key principle: redundancy across domains, not within a domain.
+How do you keep evidence alive when any single system can fail? In intelligence work, a dead drop is an evidence channel that survives the failure of every other channel. The information is placed in a domain independent of the operative. If the operative is compromised, the dead drop remains. The key principle: redundancy across domains, not within a domain.
 
 The system has three evidence channels across three independent domains:
 
@@ -285,19 +287,19 @@ If any one channel is compromised, the other two prove the system existed and wa
 
 ## The Strange Loop: Self-Verifying Evidence
 
-The talk about tamper-evidence is itself tamper-evident. The keynote recording ends with a CardPuter entry that commits the moment. After editing, the SHA-256 hash of the final video file goes in the YouTube description. Anyone can hash the downloaded video and compare. If one frame is edited, the hash breaks.
+How do you prove the talk was not edited after recording? The talk about tamper-evidence is itself tamper-evident. The method includes a self-hash protocol for any presentation of itself. The presenter commits the moment with a CardPuter entry during recording. After editing, the SHA-256 hash of the final video goes in the video description. Anyone can hash the downloaded video and compare. If one frame is edited, the hash breaks.
 
 The system the talk describes contains the talk that describes it. The hash chain on the device and the hash in the video description are the same proof in two domains. If one falls, the other holds.
 
 This is Hofstadter's strange loop: a system that references itself, where the reference is not circular but hierarchical. The talk proves the system. The system proves the talk. Neither is the ground truth. Both are. The ground truth is the relationship between them.
 
-No keynote in history has done this.
+No methodology has self-verified its own presentation before.
 
 ## The Open-Core Model
 
 **Open (MIT, this repo):** Presence.js, 10-Prompt Build Core, 47-Prompt Sovereignty Framework, Superagent Operating Model, CEC Framework, Contextputer Protocol.
 
-**Proprietary (utility models):** Cognos, Proof of Operator, Digital Sovereignty, Ghost OS, Sovereignty Stack (â‚¬8,500 + 2% rev share).
+**Proprietary (utility models):** Cognos, Proof of Operator, Digital Sovereignty, Ghost OS, Sovereignty Stack (EUR8,500 + 2% rev share).
 
 **Deployment network (bounty-driven):** Open Cognos Initiative, Plugin Registry, community plugins. Contributors own their work. Brainiac owns the platform.
 
@@ -356,7 +358,7 @@ ISO 27001 does not deploy through one auditor. It deploys through a network of c
 
 **To claim:** Fork, build, submit PR with tests and docs. All contributions must be MIT licensed, include documentation, include tests, and be compatible with the documented architecture. No proprietary dependencies.
 
-**The fine print, stated plainly:** Revenue share is calculated from gross revenue received by Brainiac Ltd for the specific plugin or template the contributor built. Share is paid quarterly. Minimum payout threshold is â‚¬100. If the plugin generates no client revenue, no payment is owed. This is a revenue share, not a salary, not a guarantee, and not a debt. It is a deal between builders who believe the method works and want to prove it together.
+**The fine print, stated plainly:** Revenue share is calculated from gross revenue received by Brainiac Ltd for the specific plugin or template the contributor built. Share is paid quarterly. Minimum payout threshold is EUR100. If the plugin generates no client revenue, no payment is owed. This is a revenue share, not a salary, not a guarantee, and not a debt. It is a deal between builders who believe the method works and want to prove it together.
 
 ---
 
@@ -386,40 +388,40 @@ All figures verified July 31, 2026. CZK inputs are actual purchase prices. EUR a
 
 | Component | Industry cost (EU market rates) | Open Method cost |
 |---|---|---|
-| Backend engineering (hash-chained API functions) | â‚¬45K-90K | â‚¬0 |
-| Security and quality engineering (10 audit checks per build) | â‚¬17K-34K | â‚¬0 |
-| UI/UX design (production-grade products) | â‚¬34K-68K | â‚¬0 |
-| Internationalization (Czech/English) | â‚¬9K-17K | â‚¬0 |
-| Product management (systematic building practice) | â‚¬28K-56K | â‚¬0 |
-| IP filing (7 utility models) | â‚¬5K-17K | â‚¬140 |
-| Technical writing (API docs, specs) | â‚¬11K-22K | â‚¬0 |
-| Legal (terms, privacy, GDPR) | â‚¬11K-28K | â‚¬0 |
-| Disaster recovery planning | â‚¬17K-34K | â‚¬0 |
-| Business continuity planning | â‚¬11K-22K | â‚¬0 |
-| Accessibility audit (WCAG 2.2 AA) | â‚¬6K-17K | â‚¬0 |
-| **Total** | **â‚¬194K-405K** | **~â‚¬2,100** |
+| Backend engineering (hash-chained API functions) | EUR45K-90K | EUR0 |
+| Security and quality engineering (10 audit checks per build) | EUR17K-34K | EUR0 |
+| UI/UX design (production-grade products) | EUR34K-68K | EUR0 |
+| Internationalization (Czech/English) | EUR9K-17K | EUR0 |
+| Product management (planning, prioritization, oversight) | EUR28K-56K | EUR0 |
+| IP filing (7 utility models) | EUR5K-17K | EUR140 |
+| Technical writing (API docs, specs) | EUR11K-22K | EUR0 |
+| Legal (terms, privacy, GDPR) | EUR11K-28K | EUR0 |
+| Disaster recovery planning | EUR17K-34K | EUR0 |
+| Business continuity planning | EUR11K-22K | EUR0 |
+| Accessibility audit (WCAG 2.2 AA) | EUR6K-17K | EUR0 |
+| **Total** | **EUR194K-405K** | **~EUR2,100** |
 
-**The â‚¬2,100 breakdown:**
+**The EUR2,100 breakdown:**
 
 | Category | Item | CZK input | EUR value | Role in system |
 |---|---|---|---|---|
-| Sovereignty Stack | M5Cardputer Field Unit | 1,500 CZK | â‚¬60 | Physical hash-chain and field logger |
-| Sovereignty Stack | Beelink SER5 Mini PC Host | 13,000 CZK | â‚¬520 | Air-gapped local inference server |
-| **Sovereignty subtotal** | **Core infrastructure** | **14,500 CZK** | **â‚¬580** | **Core AI and verification hardware** |
-| Production and IP | 7x utility model filings | 3,500 CZK (7 x 500 CZK online via upv.gov.cz) | â‚¬140 | IP protection (12-mo EPO priority) |
-| Production and IP | Blue Yeti microphone | 3,000 CZK | â‚¬120 | Audio processing and capture |
-| Production and IP | Cables and adapters | 3,000 CZK | â‚¬120 | Interconnects and signal pipeline |
-| Production and IP | USB drives and storage | 3,000 CZK | â‚¬120 | Offline air-gapped backups |
-| Production and IP | Legacy build host (GTX 1070 era) | 7,500 CZK (estimated market value) | â‚¬300 | Secondary build host |
-| Production and IP | Dual display monitors | 6,000 CZK | â‚¬240 | Production display array |
-| Production and IP | iPhone 14 camera node | 12,000 CZK | â‚¬480 | Video B-roll / overhead camera |
-| **Total** | **Full keynote and filings stack** | **52,000 CZK** | **~â‚¬2,100** | **Complete physical and IP production** |
+| Sovereignty Stack | M5Cardputer Field Unit | 1,500 CZK | EUR60 | Physical hash-chain and field logger |
+| Sovereignty Stack | Beelink SER5 Mini PC Host | 13,000 CZK | EUR520 | Local inference server (offline-capable) |
+| **Sovereignty subtotal** | **Core infrastructure** | **14,500 CZK** | **EUR580** | **Core AI and verification hardware** |
+| Production and IP | 7x utility model filings | 3,500 CZK (7 x 500 CZK online via upv.gov.cz) | EUR140 | IP protection (12-mo EPO priority) |
+| Production and IP | Blue Yeti microphone | 3,000 CZK | EUR120 | Audio processing and capture |
+| Production and IP | Cables and adapters | 3,000 CZK | EUR120 | Interconnects and signal pipeline |
+| Production and IP | USB drives and storage | 3,000 CZK | EUR120 | Offline air-gapped backups |
+| Production and IP | Legacy build host (GTX 1070 era) | 7,500 CZK (estimated market value) | EUR300 | Secondary build host |
+| Production and IP | Dual display monitors | 6,000 CZK | EUR240 | Production display array |
+| Production and IP | iPhone 14 camera node | 12,000 CZK | EUR480 | Video B-roll / overhead camera |
+| **Total** | **Full production and filings stack** | **52,000 CZK** | **~EUR2,100** | **Complete physical and IP production** |
 
 Every line item is verifiable. The first two lines are the sovereignty stack: the hardware that runs the hash chain and the local models. The remaining lines are production gear, IP filings, and the legacy build host. No hidden costs. No rounding tricks.
 
-**The sovereignty stack alone: â‚¬580.** This is the CardPuter plus the Beelink. This is what runs the hash chain and the local AI models. This is the infrastructure the talk is about.
+**The sovereignty stack alone: EUR580.** This is the CardPuter plus the Beelink. This is what runs the hash chain and the local AI models. This is the infrastructure this method deploys.
 
-**The cloud equivalent: approximately â‚¬10,000 per year** in API subscriptions across four model providers, based on current per-token enterprise pricing. The sovereignty stack costs â‚¬580 once. Break-even: under four weeks.
+**The cloud equivalent: approximately EUR10,000 per year** in API subscriptions across four model providers, based on current per-token enterprise pricing. The sovereignty stack costs EUR580 once. Break-even: under four weeks.
 
 **Multiplier: 92x to 192x.** This is not a rounding error. It is a structural difference in cost architecture between the industry model (teams, hours, overhead) and the Open Method (one person, one agent, structured prompts, persistent state, error correction, verification).
 
@@ -430,7 +432,7 @@ Every line item is verifiable. The first two lines are the sovereignty stack: th
 Every claim in this repository is verifiable. Do not take anyone's word for it. Check it yourself. The entire methodology is built on the principle that claims must be verifiable. If a claim cannot be verified, it is not a claim. It is marketing.
 
 ### Step 1: Verify the products exist (30 seconds)
-- Visit `https://auditproof.pro`. The operator assessment system should load. Three verifiable tonight: auditproof.pro, digitalsovereignty.online, ghost-os.online.
+- Visit `https://auditproof.pro`. The operator assessment system should load. Three are verifiable: auditproof.pro, digitalsovereignty.online, ghost-os.online.
 - Visit `https://digitalsovereignty.online`. The B2B platform should load. Czech default if your browser is in Czech or your timezone is Prague.
 - Visit `https://ghost-os.online`. The tactical field manual should load.
 
@@ -485,6 +487,6 @@ The method is open. The deployment is paid. The standard is the moat. The Blackl
 
 ---
 
-*This repository goes public on August 1, 2026 at 19:00 CET. The deployment network launches the same day. Everything before that date is preparation. Everything after is the flywheel.*
+*This repository goes public August 1, 2026. The deployment network launches the same day. Everything before that date is preparation. Everything after is the flywheel.*
 
 
