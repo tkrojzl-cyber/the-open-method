@@ -421,6 +421,8 @@ Every line item is verifiable. The first two lines are the sovereignty stack: th
 
 **The sovereignty stack alone: EUR580.** This is the CardPuter plus the Beelink. This is what runs the hash chain and the local AI models. This is the infrastructure this method deploys.
 
+This hardware has no GPU. Inference is CPU-only. It is not fast. A company would deploy this on a machine with a GPU. The architecture does not change. The sovereignty does not change. The speed is a hardware budget. The ownership is an architecture decision.
+
 **The cloud equivalent: approximately EUR10,000 per year** in API subscriptions across four model providers, based on current per-token enterprise pricing. The sovereignty stack costs EUR580 once. Break-even: under four weeks.
 
 **Multiplier: 92x to 192x.** This is not a rounding error. It is a structural difference in cost architecture between the industry model (teams, hours, overhead) and the Open Method (one person, one agent, structured prompts, persistent state, error correction, verification).
