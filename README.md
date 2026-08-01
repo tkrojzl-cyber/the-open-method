@@ -2,6 +2,8 @@
 
 ## A formal methodology for building production-grade software with AI agents.
 
+AI agents can build software. The problem is not building. The problem is verifying what was built, correcting what drifts, and proving it still works when the platform, the vendor, or the founder is gone.
+
 Not vibe-coding, or prompt-and-pray, or a chatbot wrapper.
 
 A structured systems architecture expressed in natural language, with verification, error correction, and cryptographic integrity built in. Derived from a systematic building practice over nine months, solo, for about â‚¬2,100.
@@ -34,11 +36,28 @@ The method has three layers, each extracted from a different phase of practice.
 
 **Stage 3 (47 prompts, added sovereignty):** Doomsday recovery, hash chains, public verification, legal shields, operational resilience, knowledge transfer, accessibility. These are the practices that were learned to be necessary but were not implemented on every build. Some products have them. Some do not. The method says: all should. The practice says: still catching up.
 
-**The current version is 47 prompts across 11 phases.** The 10-prompt build core is what was done. The 37 additional prompts are what was learned to do. The complete method is both.
+**The current version is 47 prompts across 11 phases, plus Phase 0 (DACV).** The 10-prompt build core is what was done. The 37 additional prompts are what was learned to do. Phase 0 runs before all of them. The complete method is all three.
 
 10 prompts build the product. 37 more make it sovereign. The first 10 are derived from practice. The remaining 37 are validated by the absence of the failures they prevent on the products where they were implemented, and by the presence of those failures on the products where they were not.
 
 ---
+
+
+## Phase 0: DACV (Dual-AI Cross-Verification)
+
+Before any build begins, a verification protocol runs. Two AIs with different architectures, different training data, different blind spots. One is asked to verify. The other is asked to extend or contradict. When they agree, confidence is high. When one catches what the other missed, that is error correction no single AI can produce.
+
+The human orchestrates. The AIs are the advisory board. The human makes the call.
+
+This was not designed. It was discovered on July 29, 2026, while setting up the hardware for the keynote. One AI was asked for the optimal encoder configuration. It specified an NVIDIA RTX 3080. The flat does not contain an RTX 3080. The AI hallucinated hardware that does not exist. The second AI caught it. Fifteen minutes to a locked configuration that would have taken hours of trial and error solo.
+
+Four question types structure the handoff:
+- A (Verify): Is this claim accurate?
+- B (Extend): What does this imply?
+- C (Contradict): What evidence opposes this?
+- D (Converge): What is the converged conclusion?
+
+DACV is Phase 0 because error correction must run before the build, not after. The same principle as the hash chain: do not trust one source. Chain two. Verify the link.
 
 ## The Vibe-Coding Ceiling
 
@@ -250,6 +269,30 @@ This is not a product. This is how infrastructure standards are born.
 
 ---
 
+
+## The Dead Drop Principle
+
+In intelligence work, a dead drop is an evidence channel that survives the failure of every other channel. The information is placed in a domain independent of the operative. If the operative is compromised, the dead drop remains. The key principle: redundancy across domains, not within a domain.
+
+The system has three evidence channels across three independent domains:
+
+- **Silicon:** The M5Cardputer. A SHA-256 hash chain in non-volatile memory. Survives internet failure, platform shutdown, account lockout. Physically in someone's pocket.
+- **Cloud:** The verification API at auditproof.pro. Survives device failure, physical damage, the CardPuter being destroyed. Accessible from any phone.
+- **Source code:** This repository. Survives business failure, the company dissolving, the founder being unavailable. The method is public. It is forked. It exists independently.
+
+If any one channel is compromised, the other two prove the system existed and was functional. This is not redundancy. This is evidence architecture.
+
+
+## The Strange Loop: Self-Verifying Evidence
+
+The talk about tamper-evidence is itself tamper-evident. The keynote recording ends with a CardPuter entry that commits the moment. After editing, the SHA-256 hash of the final video file goes in the YouTube description. Anyone can hash the downloaded video and compare. If one frame is edited, the hash breaks.
+
+The system the talk describes contains the talk that describes it. The hash chain on the device and the hash in the video description are the same proof in two domains. If one falls, the other holds.
+
+This is Hofstadter's strange loop: a system that references itself, where the reference is not circular but hierarchical. The talk proves the system. The system proves the talk. Neither is the ground truth. Both are. The ground truth is the relationship between them.
+
+No keynote in history has done this.
+
 ## The Open-Core Model
 
 **Open (MIT, this repo):** Presence.js, 10-Prompt Build Core, 47-Prompt Sovereignty Framework, Superagent Operating Model, CEC Framework, Contextputer Protocol.
@@ -264,9 +307,13 @@ This is the open-core model. Red Hat built it and was acquired by IBM for $34B. 
 
 ---
 
-## The Deployment Network
+## The Blacklist (Deployment Network)
 
-15 bounties. No cash up front. You own your work. You earn from it.
+15 ranks. 15 down to 1. Each rank is a named target with a specific bounty. Contributors start at the bottom. They complete bounties. They climb. Each rank unlocked is a public achievement. The top rank is the one everyone wants.
+
+This is not a job board. This is a competition. Infrastructure deployment as a ranked progression. The same bounties. The same revenue share. The game layer goes on top.
+
+No cash up front. You own your work. You earn from it.
 
 **How it works:**
 
@@ -434,7 +481,7 @@ Note: The GitHub version of Presence.js has 14 signals. The production version o
 
 MIT. Use it. Build with it. Fork it. If you build something that matters, say so.
 
-The method is open. The deployment is paid. The standard is the moat.
+The method is open. The deployment is paid. The standard is the moat. The Blacklist is the deployment engine.
 
 ---
 
