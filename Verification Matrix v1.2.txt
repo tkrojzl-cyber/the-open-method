@@ -1,0 +1,174 @@
+# Verification Matrix v1.2
+
+**Updated:** 2026-08-02
+**Status:** Second-pass corrections
+**Changes from v1.1:** S1 (Stage 1 hash rule clarified). S2 (chain-verification exceptions at stage boundaries + || defined + worked example). S5 (Prompt 09 severity corrected to match prompt file). S6 (Performance timing restored to Prompt 05). S7 (this is now the single authoritative severity table â€” template defers here).
+
+---
+
+## Â§1. Severity System (SINGLE AUTHORITATIVE COPY â€” S7 fix)
+
+| Level | Definition | Ship blocker? |
+|-------|-----------|---------------|
+| CRITICAL | Revenue-blocking, data-loss, security vulnerability | YES |
+| HIGH | Trust-damaging, broken user flow, wrong content, untraceable artifact | YES |
+| MEDIUM | Polish gap, inconsistency, non-blocking | NO |
+| LOW | Cosmetic, preference | NO |
+
+Rule: A CRITICAL or HIGH finding on any check FAILS the prompt. MEDIUM and LOW are recorded but do not block.
+
+### Report color vocabulary (sweep report visualization only)
+
+| Primary level | Report color |
+|--------------|-------------|
+| CRITICAL | RED |
+| HIGH | RED |
+| MEDIUM | AMBER |
+| LOW | GREEN |
+
+The GREEN/AMBER/RED system appears only in /docs/sweeps/full-report.md. Never in Acceptance Criteria, Verification Artifacts, or Gate Checks.
+
+### Specific rulings
+
+- Border-radius inconsistency: MEDIUM (non-blocking). Not a FAIL condition.
+- Touch target size: PASS at 44px+ (WCAG 2.1 AA minimum). FAIL under 44px. 48px recommended best practice, not a FAIL threshold.
+- Extension point not tracing to a non-goal: HIGH (blocking). This is a scope violation. (S5 fix â€” was incorrectly listed as MEDIUM in v1.1.)
+
+---
+
+## Â§2. The 10 Verification Categories
+
+| # | Category | What it checks | Applies from |
+|---|----------|----------------|-------------|
+| 1 | Functional | Does the feature work end to end | Prompt 05 |
+| 2 | Security | PII, trust boundaries, secrets, data classification | Prompt 04 |
+| 3 | Accessibility | WCAG 2.1 AA, keyboard nav, screen reader, contrast | Prompt 07 |
+| 4 | Mobile | 375px, 768px, 1440px viewports, touch targets, responsive | Prompt 07 |
+| 5 | Performance | Load time, API response, database query time | Prompt 05 (S6 fix â€” restored from v1.0, was silently changed to 10 in v1.1) |
+| 6 | Provenance | Hash chain integrity, artifact hashing, prevHash verification | Prompt 01 (S1 fix â€” Stage 1 hashes are computed, not published) |
+| 7 | Documentation | README, inline docs, verification artifacts written | Prompt 01 |
+| 8 | Scope | Core actions only, no scope creep, non-goals respected | Prompt 01 |
+| 9 | Consistency | Naming, terminology, file paths, design tokens | Prompt 10 |
+| 10 | Drift | CEC drift, contradiction, scope creep checks | Prompt 20 |
+
+---
+
+## Â§3. Stage 1 Checks (Prompts 01-10)
+
+| Prompt | Categories checked | Severity enforced |
+|--------|-------------------|-----------------|
+| 01 | Scope, Documentation, Provenance | CRITICAL: no core actions = FAIL |
+| 02 | Scope, Documentation, Provenance | CRITICAL: no stack decision = FAIL |
+| 03 | Functional, Documentation, Provenance | CRITICAL: project does not start = FAIL |
+| 04 | Security, Documentation, Provenance | CRITICAL: no entities = FAIL |
+| 05 | Functional, Performance, Documentation, Provenance | CRITICAL: primary flow broken = FAIL |
+| 06 | Functional, Performance, Documentation, Provenance | HIGH: secondary flow broken = FAIL |
+| 07 | Accessibility, Mobile, Documentation, Provenance | HIGH: missing error state = FAIL |
+| 08 | Security, Functional, Documentation, Provenance | CRITICAL: integration with no error handling = FAIL |
+| 09 | Scope, Documentation, Provenance | HIGH: untraceable extension point = FAIL (S5 fix) |
+| 10 | Consistency, Performance, Documentation, Provenance | HIGH: flow regression = FAIL |
+
+---
+
+## Â§4. Stage 2 Checks (Prompts 11-25)
+
+| Prompt | Categories checked | Sweep artifact | Severity enforced |
+|--------|-------------------|---------------|-----------------|
+| 11 | Functional, Provenance | routing.md | CRITICAL: 404 on core route = FAIL |
+| 12 | Functional, Provenance | clickability.md | CRITICAL: dead CTA = FAIL |
+| 13 | Security, Functional, Provenance | payments.md | CRITICAL: dead payment link = FAIL |
+| 14 | Consistency, Documentation, Provenance | copy.md | HIGH: em dash in rendered text = FAIL |
+| 15 | Consistency, Accessibility, Provenance | branding.md | MEDIUM: border-radius mismatch = non-blocking |
+| 16 | Mobile, Accessibility, Provenance | mobile.md | HIGH: layout broken at 375px = FAIL |
+| 17 | Functional, Provenance | functionality.md | CRITICAL: core flow regression = FAIL |
+| 18 | Performance, Provenance | animation.md | MEDIUM: janky animation = non-blocking |
+| 19 | Scope, Provenance | north-star.md | HIGH: feature contradicts north star = FAIL |
+| 20 | Drift, Provenance | drift-check.md | HIGH: drift detected = FAIL |
+| 21 | Drift, Provenance | contradiction-scan.md | HIGH: contradiction found = FAIL |
+| 22 | Drift, Provenance | scope-check.md | HIGH: scope creep confirmed = FAIL |
+| 23 | Performance, Provenance | performance.md | HIGH: load time >3s = FAIL |
+| 24 | All 10 | full-report.md | Aggregate of 11-23 |
+| 25 | Documentation, Provenance | ship-decision.md | CRITICAL: unresolved CRITICAL/HIGH = FAIL |
+
+---
+
+## Â§5. Stage 3 Checks (Prompts 26-47)
+
+| Prompt | Categories checked | Artifact | Severity enforced |
+|--------|-------------------|---------|-----------------|
+| 26 | Documentation, Provenance | doomsday-recovery.md | HIGH: incomplete recovery doc = FAIL |
+| 27 | Provenance, Security | hash-chain.md + implementation | CRITICAL: chain not verifiable = FAIL |
+| 28 | Provenance, Security | chain-persistence.md | CRITICAL: chain breaks on restart = FAIL |
+| 29 | Provenance, Security, Functional | public-verification.md + API | CRITICAL: API returns wrong verification = FAIL |
+| 30 | Security, Documentation | terms-of-service.md | HIGH: missing liability clause = FAIL |
+| 31 | Security, Documentation | privacy-policy.md | HIGH: missing data handling = FAIL |
+| 32 | Security, Documentation | ip-declaration.md | HIGH: missing IP claim = FAIL |
+| 33 | Security, Provenance | backup-strategy.md | HIGH: no tested backup = FAIL |
+| 34 | Security, Provenance | failover-plan.md | HIGH: no failover path = FAIL |
+| 35 | Documentation | documentation.md | MEDIUM: incomplete docs = non-blocking |
+| 36 | Documentation | onboarding.md | MEDIUM: incomplete onboarding = non-blocking |
+| 37 | Accessibility | accessibility-audit.md | HIGH: WCAG 2.1 AA failure = FAIL |
+| 38 | Documentation, Provenance | seo-meta.md | MEDIUM: missing meta tag = non-blocking |
+| 39 | Functional, Provenance | 404-crawl.md | HIGH: unhandled 404 on linked route = FAIL |
+| 40 | Performance, Provenance | load-time.md | MEDIUM: >3s load = non-blocking (already checked in 23) |
+| 41 | Security, Provenance | dependency-matrix.md | HIGH: unmapped dependency = FAIL |
+| 42 | Provenance, Documentation | version-control.md | MEDIUM: no commit convention = non-blocking |
+| 43 | Documentation, Provenance | error-classification.md | MEDIUM: no severity system = non-blocking |
+| 44 | Functional, Security | monitoring.md | MEDIUM: no alerting = non-blocking |
+| 45 | Scope, Documentation | community-extensions.md | MEDIUM: no extension spec = non-blocking |
+| 46 | Documentation, Provenance | bounty-board.md | MEDIUM: no bounty spec = non-blocking |
+| 47 | Provenance | final-seal.md | CRITICAL: chain broken or unresolved = FAIL |
+
+---
+
+## Â§6. Provenance Chain â€” Authoritative Specification (S1 + S2 fix)
+
+### Chain structure
+
+The chain runs through verification artifacts. Every prompt computes an `artifact_hash` (SHA-256 of its primary output artifact) and a `prevHash` (link to the previous verification artifact or gate hash).
+
+- Prompt 01: prevHash = "GENESIS", artifact_hash = SHA-256(/docs/discovery-brief.md)
+- Prompt 02: prevHash = SHA-256(prompt-01 verification file contents), artifact_hash = SHA-256(/docs/architecture.md)
+- ...continuous through Prompt 10...
+- Gate 1: gate_1_hash = SHA-256(byte_concat(artifact_hash_01, artifact_hash_02, ..., artifact_hash_10))
+- Prompt 11: prevHash = gate_1_hash (NOT SHA-256 of prompt-10's verification file)
+- ...continuous through Prompt 25...
+- Gate 2: gate_2_hash = SHA-256(byte_concat(artifact_hash_11, artifact_hash_12, ..., artifact_hash_25))
+- Prompt 26: prevHash = gate_2_hash (NOT SHA-256 of prompt-25's verification file)
+- ...continuous through Prompt 47...
+- Gate 3: gate_3_hash = SHA-256(byte_concat(artifact_hash_26, ..., artifact_hash_47)) = product's final provenance seal
+
+### Chain verification procedure (S2 fix â€” with explicit stage-boundary exceptions)
+
+To verify the chain at any point:
+
+1. **For all prompts EXCEPT 11 and 26:** Read prompt N's verification file. Compute SHA-256 of prompt N-1's verification file contents. Confirm it matches the `prevHash` field in prompt N's file. If mismatch, chain is broken at prompt N.
+
+2. **For Prompt 11 specifically:** prevHash is NOT the hash of prompt-10's verification file. It is `gate_1_hash`. To verify: recompute gate_1_hash = SHA-256(byte_concat(artifact_hash_01 through artifact_hash_10)) using the artifact_hash values recorded in prompt-01 through prompt-10 verification files. Confirm it matches the `prevHash` field in prompt-11's file.
+
+3. **For Prompt 26 specifically:** prevHash is NOT the hash of prompt-25's verification file. It is `gate_2_hash`. To verify: recompute gate_2_hash = SHA-256(byte_concat(artifact_hash_11 through artifact_hash_25)) using the artifact_hash values recorded in prompt-11 through prompt-25 verification files. Confirm it matches the `prevHash` field in prompt-26's file.
+
+### Definition of || (S2 fix)
+
+`||` means byte concatenation. Specifically: the raw bytes of each artifact_hash string (64-character hex string encoded as UTF-8) are concatenated in order, then the resulting byte sequence is hashed with SHA-256.
+
+### Worked example (S2 fix)
+
+Gate 1 verification for a product where:
+- Prompt 01 artifact_hash = "a1b2c3..." (64 hex chars)
+- Prompt 02 artifact_hash = "d4e5f6..." (64 hex chars)
+- ... through Prompt 10 artifact_hash = "z9y8x7..." (64 hex chars)
+
+```
+gate_1_input = "a1b2c3..." + "d4e5f6..." + ... + "z9y8x7..."  (640 bytes of UTF-8 hex chars)
+gate_1_hash = SHA-256(gate_1_input)  (64 hex chars output)
+```
+
+Prompt 11's verification file must contain:
+```
+prevHash: [gate_1_hash value]
+```
+
+To verify: recompute SHA-256(byte_concat(artifact_hash_01, ..., artifact_hash_10)) and compare.
+
+
