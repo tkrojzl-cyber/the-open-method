@@ -142,7 +142,7 @@ The Open Method includes a Doomsday Recovery Document as a standard deliverable:
 
 **Phase 10, Final Sovereignty Gate (Prompts 45-47):** WCAG 2.2 AA accessibility audit, CEC final drift audit, ship decision matrix. Survives: accessibility gaps, final drift, all failure modes combined.
 
-Full prompt text for all 47 prompts is published as GitHub Issues in this repository. Each issue is one prompt, labeled by phase and number. This README describes the architecture. The issues are the implementation.
+Full prompt text for all 47 prompts is published as .md files in this repository (prompt-01.md through prompt-47.md). Each file is one prompt. This README describes the architecture. The prompt files are the implementation.
 
 ---
 
@@ -267,9 +267,7 @@ SSL started as one implementation. One browser. One certificate authority. Then 
 
 The Open Method follows the same architecture. The independent operator assessment is the standard. The product is the implementation. The seal is the certificate. The deployment network is the certificate authority network. The law creates the need. The standard fills the need. The deployment network scales it.
 
-This is not a product. This is how infrastructure standards are born.
-
----
+The primitives in this method are not new. They are well-established in supply-chain security, media provenance, and product management. What is new is the packaging: a single, opinionated playbook for a solo builder using AI agents, with working code behind it.
 
 
 ## The Dead Drop Principle
@@ -284,6 +282,7 @@ The system has three evidence channels across three independent domains:
 
 If any one channel is compromised, the other two prove the system existed and was functional. This is not redundancy. This is evidence architecture.
 
+Content Credentials (C2PA), backed by Adobe, Microsoft, and the BBC, already provides cryptographically signed provenance for media. This is a different but related approach: not signing the media itself, but committing the presentation to a hardware hash chain that predates the recording. EDIT: During the upload process I was trying to finish prior to the 02/08/2026 Date I omitted to hash the interview itself. An unfortunate oversight. Oh the question whether anyone has thought to apply it to their own methodology presentation using a $40 piece of hardware - I believe this has not been done.
 
 ## The Strange Loop: Self-Verifying Evidence
 
