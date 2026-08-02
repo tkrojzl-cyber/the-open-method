@@ -261,13 +261,24 @@ Note: Contextputer is the protocol. The M5Cardputer is the hardware that runs it
 
 ## How Infrastructure Standards Are Born
 
-ISO 27001 started as one document. One organization. One audit. One certificate. Then adoption. Then global infrastructure. The standard defines what acceptable security looks like. The audit verifies it. The certificate proves it. Three components. One system. Now deployed in over 96,000 organizations worldwide.
-
-SSL started as one implementation. One browser. One certificate authority. Then adoption. Then global infrastructure. The standard defines the protocol. The implementation runs it. The certificate authority issues the trust. Three components. One system. Now securing every HTTPS connection on the internet.
-
-The Open Method follows the same architecture. The independent operator assessment is the standard. The product is the implementation. The seal is the certificate. The deployment network is the certificate authority network. The law creates the need. The standard fills the need. The deployment network scales it.
+## Prior Art (Honest)
 
 The primitives in this method are not new. They are well-established in supply-chain security, media provenance, and product management. What is new is the packaging: a single, opinionated playbook for a solo builder using AI agents, with working code behind it.
+
+### Supply-chain attestation
+SLSA (Supply-chain Levels for Software Artifacts), backed by OpenSSF and Google, and in-toto attestations both provide verifiable, tamper-evident records of how artifacts are built. Sigstore/cosign provides cryptographic signing of artifacts. These are industry standards with real institutional adoption. The Open Method's hash chain is a lighter-weight version of the same principle: SHA-256 links between build artifacts, with a public verification endpoint. It does not replace SLSA or Sigstore. It applies the same principle at a granularity that a solo builder can use without infrastructure.
+
+### Media provenance
+C2PA (Content Credentials), backed by Adobe, Microsoft, the BBC, and others, is an industry standard for proving media was not edited after capture, already deployed in cameras and editing software. The self-verifying presentation protocol in this method is a personal-scale version of the same idea: commit before recording, publish the hash after, let anyone verify. The standard exists. The application to one's own methodology talk, using a CardPuter, is the specific instance.
+
+### Multi-model verification
+Using multiple AI models to cross-check each other is an existing pattern in the AI field (multi-model consensus, LLM-as-judge, ensembling). DACV (Dual-AI Cross-Verification) is not a discovery of the technique. It is a documented personal practice of using it for every technical decision in a solo build context, with a structured handoff protocol (four question types: verify, extend, contradict, converge). The pattern is known. The discipline of applying it to every decision is the practice.
+
+### Stage-gate product development
+The staged, gated build process (10 prompts to build, 15 to verify, 22 to make sovereign) follows the Stage-Gate model developed by Robert Cooper in the 1980s, in use in engineering and product management for decades. The Open Method applies it to AI-driven software builds rather than physical products. The model is not new. The application is.
+
+### What this method contributes
+Not new primitives. A concrete synthesis: the specific 47-prompt sequence, the CEC error-correction layer, the DACV handoff protocol, the three-domain evidence architecture (silicon, cloud, source), and the open-core bounty model. Derived from practice, not theory. The value is in the packaging and the practice, not in the discovery of the underlying techniques.
 
 
 ## The Dead Drop Principle
